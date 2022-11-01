@@ -26,7 +26,6 @@ jobs:
           node-version: 18
           path: ./src/pages
 
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
