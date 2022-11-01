@@ -10,5 +10,4 @@ export default defineConfig({
   }),
   integrations: [react()],
   site: 'https://giuliacot.github.io',
-  base: '/lotteryGame/lottery/',
 })
