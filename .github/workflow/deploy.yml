@@ -24,6 +24,7 @@ jobs:
         uses: withastro/action@v0
         with:
           node-version: 18
+          path: './src/pages/*'
 
   deploy:
     needs: build
