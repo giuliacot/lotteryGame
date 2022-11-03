@@ -8,6 +8,6 @@ export default defineConfig({
     mode: 'standalone',
   }),
   integrations: [react()],
-  site: 'https://giuliacot.github.io',
-  base: '/lotteryGame/lottery',
+  site: 'https://giuliacot.github.io/lotteryGame',
+  base: '/lotteryGame/',
 })
