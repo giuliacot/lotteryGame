@@ -3,6 +3,7 @@ import { addPlayers } from '../../pages/players'
 
 export const Player = () => {
   const [nickname, setNickname] = useState<FormDataEntryValue>()
+  const [done, setDone] = useState<boolean>(false)
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -15,17 +16,19 @@ export const Player = () => {
   useEffect(() => {
     if (nickname && typeof nickname === 'string') {
       const addsData = async () => {
-        const data = await addPlayers({
+        await addPlayers({
           Partecipant: nickname,
           Date: new Date(),
         })
-        console.log(data)
+        setDone(true)
       }
       addsData()
     }
   }, [nickname])
 
-  return (
+  return done ? (
+    <p>Thanks to partecipate!</p>
+  ) : (
     <form id="getNickname" onSubmit={handleSubmit}>
       <label>Your nickname</label>
       <input type="text" placeholder="Your nickname" name="nickname" />
