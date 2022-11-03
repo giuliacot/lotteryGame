@@ -1,13 +1,10 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import node from '@astrojs/node'
+import netlify from '@astrojs/netlify/functions'
 
 export default defineConfig({
   output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: netlify(),
   integrations: [react()],
   site: 'https://giuliacot.github.io/lotteryGame',
-  base: '/lotteryGame/',
 })
