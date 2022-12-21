@@ -1,9 +1,12 @@
 import axios from 'axios'
 
-export async function addPlayers(values: Record<string, unknown>) {
+export async function addPlayers(
+  values: Record<string, unknown>
+): Promise<unknown> {
   try {
     return await axios.post(
       `https://sheet.best/api/sheets/b11dcb32-ec76-4542-8794-abfe56afb99f`,
+
       values
     )
   } catch (err) {
