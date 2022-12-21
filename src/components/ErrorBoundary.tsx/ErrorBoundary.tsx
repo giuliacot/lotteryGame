@@ -25,7 +25,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-      return <InfoBox />
+      return <InfoBox type="error">Oh no! Eggs broken</InfoBox>
     }
 
     return this.props.children
