@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useReducer, useState } from 'react'
 import { addPlayers } from '../../pages/players'
 import { InfoBox } from '../InfoBox.tsx/InfoBox'
-import { initReducer, reducer } from './reducer'
+import { initReducer, reducer } from '../../utils/reducer'
 
 export const Player = () => {
   const [state, dispatch] = useReducer(reducer, initReducer)
