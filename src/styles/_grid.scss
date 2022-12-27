@@ -1,0 +1,8 @@
+$max-width: 1rem * 60;
+
+.container {
+  display: block;
+  max-width: $max-width;
+  // background-color: $orange-yellow-crayola;
+  margin: 0 auto;
+}
