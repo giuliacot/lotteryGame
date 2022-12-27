@@ -1,8 +1,13 @@
 ---
-title: "Homepage"
+title: "QRcode page"
+import { QRCode } from "../components/Qrcode/QRcode";
 import Main from "../layout/main.astro";
 ---
-
 <Main>
-  <h1>Lottery game</h1>
+  <main class="container">
+    <h1 class="hGrande">How to win a JetBrains license</h1>
+    <p class="pGrande">Scan the QR code and follow the instruction!</p>
+    <QRCode client:visible/>
+  </main>
 </Main>
+
