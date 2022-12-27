@@ -1,5 +1,8 @@
 ---
+
 const { title } = Astro.props
+import '../styles/main.scss'
+
 ---
 <html lang="en">
   <head>
@@ -10,12 +13,11 @@ const { title } = Astro.props
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;400;900&display=swap" rel="stylesheet">
+    <style lang="scss"></style>
 
-    <style is:global>
-      * {font-family: 'Lexend', sans-serif;}
-    </style>
   </head>
   <body>
     <slot />
   </body>
 </html>
+
