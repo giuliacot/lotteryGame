@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useReducer, useState } from 'react'
-import { addPlayers } from '../../pages/players'
+import { addPlayers } from '../../api/players'
 import { InfoBox } from '../InfoBox.tsx/InfoBox'
 import { initReducer, reducer } from '../../utils/reducer'
 

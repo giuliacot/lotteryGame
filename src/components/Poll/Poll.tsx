@@ -4,7 +4,7 @@ import react, {
   useReducer,
   useState,
 } from 'react'
-import { getPlayers } from '../../pages/players'
+import { getPlayers } from '../../api/players'
 import { initReducer, reducer } from '../../utils/reducer'
 import { InfoBox } from '../InfoBox.tsx/InfoBox'
 
