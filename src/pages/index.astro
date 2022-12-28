@@ -4,8 +4,10 @@ import { QRCode } from "../components/Qrcode/QRcode";
 import Main from "../layout/main.astro";
 ---
 <Main>
-  <h1 class="hGrande">How to win something</h1>
-  <p class="pGrande">Scan the QR code and follow the instruction!</p>
-  <QRCode client:visible/>
+  <div class='content'>
+    <h1 class="hGrande">How to win something</h1>
+    <p class="pGrande">Scan the QR code and follow the instruction!</p>
+    <QRCode client:visible/>
+  </div>
 </Main>
 
