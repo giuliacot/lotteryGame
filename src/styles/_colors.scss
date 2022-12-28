@@ -5,6 +5,12 @@ $pacific-blue: #009fb7ff;
 $gainsboro: #e6e6eaff;
 $ghost-white: #f4f4f8ff;
 
+/* Lightner version*/
+$orange-yellow-crayola-light: scale-color(
+  $orange-yellow-crayola,
+  $lightness: 50%
+);
+
 /* SCSS HSL */
 $tart-orange: hsla(0, 99%, 64%, 1);
 $orange-yellow-crayola: hsla(45, 99%, 70%, 1);
