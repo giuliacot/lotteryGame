@@ -42,7 +42,7 @@ export const Player = () => {
 
   return (
     <div className="content">
-      <h1 className="hGrande">Insert your funnies nickname</h1>
+      <h1 className="hGrande">Insert your funniest nickname</h1>
       {state.loading ? (
         <span>Loading...</span>
       ) : (
