@@ -16,7 +16,7 @@ export const QRCode: React.FunctionComponent = () => {
 
       setQrCodeColor({
         dark: styles.getPropertyValue('--tart-orange').trim(),
-        light: styles.getPropertyValue('--ghost-white').trim(),
+        light: '#00000000', // transparent hex ✨
       })
     }
   }, [])

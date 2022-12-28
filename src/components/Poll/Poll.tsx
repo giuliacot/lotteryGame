@@ -37,7 +37,6 @@ export const Poll: FunctionComponent = () => {
 
   return (
     <>
-      <h1>List of partecipants</h1>
       {state.loading && <span>Loading...</span>}
       {state.error && (
         <InfoBox type="error">
