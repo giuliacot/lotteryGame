@@ -1,15 +1,11 @@
 ---
+title: "QRcode page"
+import { QRCode } from "../components/Qrcode/QRcode";
+import Main from "../layout/main.astro";
 ---
+<Main>
+  <h1 class="hGrande">How to win a JetBrains license</h1>
+  <p class="pGrande">Scan the QR code and follow the instruction!</p>
+  <QRCode client:visible/>
+</Main>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Lottery</title>
-	</head>
-	<body>
-	 <h1>Lottery</h1>
-	</body>
-</html>

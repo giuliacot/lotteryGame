@@ -1,17 +1,35 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import QRCodeLib from 'qrcode'
 
 export const QRCode: React.FunctionComponent = () => {
   let canvas = useRef(null)
 
+  const [qrCodeColor, setQrCodeColor] = useState<{
+    dark: string
+    light: string
+  } | null>(null)
+
+  useEffect(() => {
+    if (window) {
+      // Get the Value of a Custom Property from the root
+      const styles = getComputedStyle(document.documentElement)
+
+      setQrCodeColor({
+        dark: styles.getPropertyValue('--tart-orange').trim(),
+        light: '#00000000', // transparent hex ✨
+      })
+    }
+  }, [])
+
   useEffect(() => {
     QRCodeLib.toCanvas(canvas.current, `${window.location.origin}/player`, {
       scale: 10,
       color: {
-        dark: '#005dad',
+        dark: qrCodeColor?.dark,
+        light: qrCodeColor?.light,
       },
     })
-  }, [])
+  }, [qrCodeColor])
 
   return <canvas ref={canvas} />
 }

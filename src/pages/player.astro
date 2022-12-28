@@ -1,18 +1,9 @@
 ---
 title: "Player page"
 import { Player } from "../components/Player/Player";
+import Main from "../layout/main.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Player</title>
-	</head>
-	<body>
-    <h1>Do you wanna win a license!?!??</h1>
-    <Player client:load/>
-	</body>
-</html>
+<Main>
+  <Player client:load/>
+</Main>

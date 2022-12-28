@@ -1,0 +1,12 @@
+$max-width: 1rem * 80;
+
+$spacingGrande: 3rem;
+$spacingMedio: 2rem;
+$specingPiccolo: 0.5rem;
+
+.container {
+  display: block;
+  max-width: $max-width;
+  margin: $spacingGrande auto;
+  height: 100vh;
+}

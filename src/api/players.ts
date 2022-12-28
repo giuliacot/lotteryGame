@@ -6,6 +6,7 @@ export async function addPlayers(
   try {
     return await axios.post(
       `https://sheet.best/api/sheets/b11dcb32-ec76-4542-8794-abfe56afb99f`,
+      //`https://sheet.best/api/sheets/b11dcb32-ec76-4542-8794-abfe56afb99`,
 
       values
     )

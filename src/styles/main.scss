@@ -1,0 +1,16 @@
+@import './colors';
+@import './typography';
+@import './grid';
+
+:root {
+  --tart-orange: #fe4a49ff;
+  --orange-yellow-crayola: #fed766ff;
+  --pacific-blue: #009fb7ff;
+  --gainsboro: #e6e6eaff;
+  --ghost-white: #f4f4f8ff;
+}
+
+body {
+  margin: 0;
+  background: $orange-yellow-crayola-light;
+}
