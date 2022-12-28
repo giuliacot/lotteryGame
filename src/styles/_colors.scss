@@ -5,25 +5,41 @@ $pacific-blue: #009fb7ff;
 $gainsboro: #e6e6eaff;
 $ghost-white: #f4f4f8ff;
 
+$lightness-factor: 60%;
+
 /* Lightner version*/
 $orange-yellow-crayola-light: scale-color(
   $orange-yellow-crayola,
-  $lightness: 50%
+  $lightness: $lightness-factor
 );
 
-/* SCSS HSL */
-$tart-orange: hsla(0, 99%, 64%, 1);
-$orange-yellow-crayola: hsla(45, 99%, 70%, 1);
-$pacific-blue: hsla(188, 100%, 36%, 1);
-$gainsboro: hsla(240, 9%, 91%, 1);
-$ghost-white: hsla(240, 22%, 96%, 1);
+$tart-orange-light: scale-color($tart-orange, $lightness: $lightness-factor);
 
-/* SCSS RGB */
-$tart-orange: rgba(254, 74, 73, 1);
-$orange-yellow-crayola: rgba(254, 215, 102, 1);
-$pacific-blue: rgba(0, 159, 183, 1);
-$gainsboro: rgba(230, 230, 234, 1);
-$ghost-white: rgba(244, 244, 248, 1);
+$pacific-blue-light: scale-color($pacific-blue, $lightness: $lightness-factor);
+
+/* Darkness version*/
+$orange-yellow-crayola-dark: scale-color(
+  $orange-yellow-crayola,
+  $lightness: -$lightness-factor
+);
+
+$tart-orange-dark: scale-color($tart-orange, $lightness: -$lightness-factor);
+
+$pacific-blue-dark: scale-color($pacific-blue, $lightness: -$lightness-factor);
+
+// /* SCSS HSL */
+// $tart-orange: hsla(0, 99%, 64%, 1);
+// $orange-yellow-crayola: hsla(45, 99%, 70%, 1);
+// $pacific-blue: hsla(188, 100%, 36%, 1);
+// $gainsboro: hsla(240, 9%, 91%, 1);
+// $ghost-white: hsla(240, 22%, 96%, 1);
+
+// /* SCSS RGB */
+// $tart-orange: rgba(254, 74, 73, 1);
+// $orange-yellow-crayola: rgba(254, 215, 102, 1);
+// $pacific-blue: rgba(0, 159, 183, 1);
+// $gainsboro: rgba(230, 230, 234, 1);
+// $ghost-white: rgba(244, 244, 248, 1);
 
 /* SCSS Gradient */
 $gradient-top: linear-gradient(
