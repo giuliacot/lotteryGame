@@ -1,16 +1,33 @@
+@import '../../styles/colors';
+
+@mixin generateInfoBoxStyle($colorLight, $colorDark) {
+  background-color: $colorLight;
+  border: 2px solid $colorDark;
+  border-radius: 4px;
+}
+
 .container {
   padding: 1rem;
   border-radius: 4px;
 }
 
 .error {
-  background-color: lightcoral;
+  @include generateInfoBoxStyle(
+    $colorLight: $tart-orange-light,
+    $colorDark: $tart-orange-dark
+  );
 }
 
 .warning {
-  background-color: palegoldenrod;
+  @include generateInfoBoxStyle(
+    $colorLight: $orange-yellow-crayola-light,
+    $colorDark: $orange-yellow-crayola-dark
+  );
 }
 
 .info {
-  background-color: lightblue;
+  @include generateInfoBoxStyle(
+    $colorLight: $pacific-blue-light,
+    $colorDark: $pacific-blue-dark
+  );
 }
