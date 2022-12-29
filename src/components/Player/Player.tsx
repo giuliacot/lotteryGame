@@ -2,6 +2,8 @@ import { FormEvent, useEffect, useReducer, useState } from 'react'
 import { addPlayers } from '../../api/players'
 import { InfoBox } from '../InfoBox.tsx/InfoBox'
 import { initReducer, reducer } from '../../utils/reducer'
+import style from './Player.module.scss'
+import { Input } from '../Input/Input'
 
 export const Player = () => {
   const [state, dispatch] = useReducer(reducer, initReducer)
@@ -34,25 +36,32 @@ export const Player = () => {
     }
   }
 
-  if (state.error) {
-    return <InfoBox type="error">Oh no! I can't add your name :( </InfoBox>
-  }
-
   if (state.done) {
     return <InfoBox type="info">Well done and thanks to partecipate!</InfoBox>
   }
 
-  if (state.loading) {
-    return <span>Loading...</span>
-  }
-
   return (
-    <form id="getNickname" onSubmit={handleSubmit}>
-      <label>Your nickname</label>
-      <input type="text" placeholder="Your nickname" name="nickname" />
-      <button type="submit" form="getNickname">
-        Let's play!
-      </button>
-    </form>
+    <div className="content">
+      <h1 className="hGrande">Insert your funniest nickname</h1>
+      {state.loading ? (
+        <span>Loading...</span>
+      ) : (
+        <form
+          className={style.nicknameForm}
+          id="getNickname"
+          onSubmit={handleSubmit}
+        >
+          <label>Nickname</label>
+          <Input placeholder="Your nickname" name="nickname" />
+          <button type="submit" form="getNickname">
+            Let's play!
+          </button>
+        </form>
+      )}
+
+      {state.error && (
+        <InfoBox type="error">Oh no! I can't add your name :( </InfoBox>
+      )}
+    </div>
   )
 }
