@@ -159,5 +159,7 @@ input[type='search']::-webkit-search-decoration {
 }
 
 .ticketContent {
+  display: flex;
   padding: $spacingMedio;
+  align-items: center;
 }
