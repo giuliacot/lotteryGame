@@ -20,21 +20,3 @@ $base-font-size: 1rem;
   @include base_typography;
   font-size: $base-font-size;
 }
-
-// Base text formatting
-blockquote,
-dd,
-div,
-dl,
-dt,
-figcaption,
-figure,
-hr,
-li,
-menu,
-ol,
-p,
-pre,
-ul {
-  @include base_typography;
-}
