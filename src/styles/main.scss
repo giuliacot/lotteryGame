@@ -10,10 +10,13 @@
   --ghost-white: #f4f4f8ff;
 }
 
+$ticket-hole: 120px;
+
 // Reset
 body {
   margin: 0;
   background: $orange-yellow-crayola-light;
+  padding: 0 2rem;
 }
 
 blockquote,
@@ -45,6 +48,9 @@ textarea {
 
 button {
   overflow: visible;
+  border-width: none;
+  border-style: none;
+  border-color: none;
 }
 
 button,
@@ -98,9 +104,60 @@ input[type='search']::-webkit-search-decoration {
 }
 //
 
-.content {
+.qrcodeContent {
+  display: grid;
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.qrcodeWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+}
+
+.ticket {
+  padding: $spacingMedio;
+  background-color: $pacific-blue-light;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'mainContent sideInfo';
+  position: relative;
+  padding-left: $ticket-hole / 2;
+  padding-right: $ticket-hole / 2;
+  min-height: 400px;
+
+  &::after {
+    position: absolute;
+    display: block;
+    width: $ticket-hole;
+    height: $ticket-hole;
+    background: $orange-yellow-crayola-light;
+    content: ' ';
+    border-radius: 100%;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    width: $ticket-hole;
+    height: $ticket-hole;
+    background: $orange-yellow-crayola-light;
+    content: ' ';
+    border-radius: 100%;
+    top: 50%;
+    bottom: 50%;
+    right: 0;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.ticketContent {
+  padding: $spacingMedio;
 }
