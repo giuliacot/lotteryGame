@@ -1,4 +1,7 @@
+@import '../../styles/grid';
+
 .nicknameForm {
   display: flex;
   flex-direction: column;
+  padding: $spacingGrande 0;
 }

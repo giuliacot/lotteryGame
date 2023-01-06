@@ -3,7 +3,8 @@ import { addPlayers } from '../../api/players'
 import { InfoBox } from '../InfoBox.tsx/InfoBox'
 import { initReducer, reducer } from '../../utils/reducer'
 import style from './Player.module.scss'
-import { Input } from '../Input/Input'
+import { InputWithLabel } from '../InputWithLabel/InputWithLabel'
+import { Button } from '../Button/Button'
 
 export const Player = () => {
   const [state, dispatch] = useReducer(reducer, initReducer)
@@ -41,7 +42,7 @@ export const Player = () => {
   }
 
   return (
-    <div className="content">
+    <div>
       <h1 className="hGrande">Insert your funniest nickname</h1>
       {state.loading ? (
         <span>Loading...</span>
@@ -51,11 +52,18 @@ export const Player = () => {
           id="getNickname"
           onSubmit={handleSubmit}
         >
-          <label>Nickname</label>
-          <Input placeholder="Your nickname" name="nickname" />
-          <button type="submit" form="getNickname">
+          <InputWithLabel.Label labelFor="nickname">
+            Nickname
+          </InputWithLabel.Label>
+          <InputWithLabel.Input
+            id="nickname"
+            placeholder="Your nickname"
+            name="nickname"
+          />
+
+          <Button type="submit" form="getNickname">
             Let's play!
-          </button>
+          </Button>
         </form>
       )}
 

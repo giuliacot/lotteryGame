@@ -1,3 +1,3 @@
-# Let's win something on this game
+# Let's win something on some game
 
-Scan a QRcode, add your nickname and partecipate to some weird lottery to win something ❤️‍🔥
+Scan a QRcode, add your nickname and participate in some weird lottery to win who knows what

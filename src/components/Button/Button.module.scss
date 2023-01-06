@@ -1,0 +1,8 @@
+@import '../../styles/_grid.scss';
+
+.button {
+  padding: $spacingPiccolo;
+  background-color: var(--tart-orange);
+  border-radius: 4px;
+  color: var(--ghost-white);
+}
