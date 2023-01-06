@@ -123,9 +123,9 @@ input[type='search']::-webkit-search-decoration {
   grid-template-rows: 1fr;
   grid-template-areas: 'mainContent sideInfo';
   position: relative;
-  padding-left: $ticket-hole / 2;
-  padding-right: $ticket-hole / 2;
-  min-height: 400px;
+  padding-left: calc($ticket-hole / 2);
+  padding-right: calc($ticket-hole / 2);
+  min-height: 500px;
 
   &::after {
     position: absolute;

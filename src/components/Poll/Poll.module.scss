@@ -1,0 +1,114 @@
+// check how to create a cube with transform preserve3d
+/**
+Experiments with trapezius
+**/
+// .slotMachine {
+//   $widthDisplay: 488;
+//   $heightDisplay: 300;
+//   &Wrapper {
+//     outline: 1px dashed blueviolet;
+//     margin: 0 auto;
+//     // transform-style: preserve-3d;
+//     // transform: rotate3d(1, 0, 0, 40deg);
+//   }
+
+//   &Display {
+//     width: calc($widthDisplay * 1px);
+//     height: calc($heightDisplay * 1px);
+//     background-color: palegreen;
+//     margin: 0 auto;
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   &Screen {
+//     width: calc($widthDisplay * 0.7px);
+//     height: calc($heightDisplay * 0.5px);
+//     background: whitesmoke;
+//     margin: 0 auto;
+//   }
+
+//   &Keyboard {
+//     display: flex;
+//     flex-direction: row;
+//     // use background hack to make a trapezoid
+//     &__left {
+//       height: 150px;
+//       width: calc($heightDisplay * 1.2px);
+//       background-image: linear-gradient(
+//         51deg,
+//         dodgerblue 280px,
+//         transparent 280px
+//       );
+
+//       transform: rotateY(180deg);
+//     }
+
+//     &__right {
+//       height: 150px;
+//       width: calc($heightDisplay * 1.2px);
+//       background-image: linear-gradient(
+//         51deg,
+//         dodgerblue 280px,
+//         transparent 280px
+//       );
+//     }
+//   }
+
+//   &Border {
+//     height: calc($heightDisplay / 6 * 1px);
+//     background: palevioletred;
+//   }
+// }
+
+.slotMachine {
+  position: relative;
+  min-height: 500px;
+  &Display {
+    width: 400px;
+    height: 300px;
+    background-color: pink;
+    transform: translate(68%, 50%);
+    position: absolute;
+    bottom: 120%;
+  }
+}
+
+.slotMachineKeyboard {
+  transform-style: preserve-3d;
+  transform: perspective(400px) rotate3d(0, 1, 0.75, 180deg) scale(2.5);
+  position: relative;
+  margin: 0 auto;
+  width: 250px;
+
+  &Front {
+    width: 250px;
+    height: 100px;
+    background-color: palegreen;
+    transform: translateZ(0px) translateX(3px);
+    position: absolute;
+    top: 0;
+  }
+
+  &Botton {
+    width: 250px;
+    height: 100px;
+    background-color: palegreen;
+    transform: translateZ(50px) translateX(3px);
+    top: 0;
+  }
+
+  &Left {
+    width: 250px;
+    height: 50px;
+    background-color: rgb(104, 167, 104);
+    transform: rotateX(90deg) translate3d(3px, 25px, 25px);
+  }
+
+  &Right {
+    width: 250px;
+    height: 50px;
+    background-color: orange;
+    transform: rotateX(90deg) translate3d(3px, 25px, 175px);
+  }
+}
