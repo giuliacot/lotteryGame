@@ -62,24 +62,31 @@ Experiments with trapezius
 // }
 
 .slotMachine {
-  position: relative;
-  min-height: 500px;
+  &Wrap {
+    display: block;
+    position: relative;
+    min-height: 500px;
+    max-width: 1000px;
+  }
   &Display {
     width: 400px;
     height: 300px;
     background-color: pink;
-    transform: translate(68%, 50%);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 30%;
     position: absolute;
-    bottom: 120%;
   }
 }
 
 .slotMachineKeyboard {
   transform-style: preserve-3d;
-  transform: perspective(400px) rotate3d(0, 1, 0.75, 180deg) scale(2.5);
-  position: relative;
-  margin: 0 auto;
+  transform: translate(-50%, -30%) perspective(400px)
+    rotate3d(0, 1, 0.75, 180deg) scale(2.5);
+  position: absolute;
   width: 250px;
+  top: 50%;
+  left: 50%;
 
   &Front {
     width: 250px;
