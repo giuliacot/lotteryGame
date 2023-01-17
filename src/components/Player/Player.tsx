@@ -1,21 +1,26 @@
-import { FormEvent, useEffect, useReducer, useState } from 'react'
-import { addPlayers } from '../../api/players'
+import { FormEvent, useReducer } from 'react'
 import { InfoBox } from '../InfoBox.tsx/InfoBox'
 import { initReducer, reducer } from '../../utils/reducer'
-import style from './Player.module.scss'
 import { InputWithLabel } from '../InputWithLabel/InputWithLabel'
 import { Button } from '../Button/Button'
+
+import style from './Player.module.scss'
 
 export const Player = () => {
   const [state, dispatch] = useReducer(reducer, initReducer)
 
   const setPlayers = async (nickname: string) => {
     try {
-      const r = await addPlayers({
-        Partecipant: nickname,
-        Date: new Date(),
+      const response = await fetch('/players', {
+        method: 'POST',
+        body: JSON.stringify({
+          nickname,
+        }),
       })
-      if (r && r.hasOwnProperty('data')) {
+
+      const addedPlayer = await response.json()
+
+      if (addedPlayer) {
         dispatch({ type: 'set_done' })
       }
     } catch (e) {
