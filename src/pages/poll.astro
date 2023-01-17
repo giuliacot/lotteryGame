@@ -2,8 +2,27 @@
 title: 'Poll page'
 import { Poll } from '../components/Poll/Poll'
 import Main from '../layout/main.astro'
+
+const response = await fetch(
+  `https://api.airtable.com/v0/${
+    import.meta.env.AIRTABLE_BASE_ID
+  }/tbly3rakdQzph3DVm`,
+  {
+    headers: {
+      authorization: `Bearer ${import.meta.env.AIRTABLE_API_SECRET}`,
+    },
+  }
+)
+const { records } = await response.json()
+const listOfPartecipants = records.map(
+  (partecipant: {
+    id: string
+    createdTime: string
+    fields: { creation_timestamp: string; nickname: string }
+  }) => partecipant.fields
+)
 ---
 
 <Main>
-  <Poll client:load />
+  <Poll names={listOfPartecipants} client:load />
 </Main>
