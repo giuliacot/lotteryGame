@@ -1,11 +1,4 @@
-import react, {
-  FunctionComponent,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from 'react'
-import { getPlayers } from '../../pages/players'
+import { useMemo, useReducer, useState } from 'react'
 import { initReducer, reducer } from '../../utils/reducer'
 import { InfoBox } from '../InfoBox.tsx/InfoBox'
 
