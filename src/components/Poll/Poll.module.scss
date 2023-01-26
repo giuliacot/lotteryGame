@@ -67,16 +67,41 @@ Experiments with trapezius
     position: relative;
     min-height: 500px;
     max-width: 1000px;
+    margin: 0 auto;
   }
   &Display {
     width: 400px;
     height: 300px;
-    background-color: pink;
+    background-color: #ffa69e;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 30%;
     position: absolute;
+    border-radius: 8px;
   }
+  &Screen {
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    border: 10px solid #f7585b;
+    transform: translate(-50%, -60%);
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    border-radius: 8px;
+  }
+}
+
+.slotMachineLever {
+  width: 20px;
+  height: 60px;
+  background-color: #d0b802;
+  border-top: 2px solid #bfa902;
+  border-bottom: 2px solid #bfa902;
+  position: absolute;
+  right: 0%;
+  bottom: 30%;
+  left: 100%;
 }
 
 .slotMachineKeyboard {
@@ -91,7 +116,7 @@ Experiments with trapezius
   &Front {
     width: 250px;
     height: 100px;
-    background-color: palegreen;
+    background-color: #ff686b;
     transform: translateZ(0px) translateX(3px);
     position: absolute;
     top: 0;
@@ -100,7 +125,7 @@ Experiments with trapezius
   &Botton {
     width: 250px;
     height: 100px;
-    background-color: palegreen;
+    background-color: #ff686b;
     transform: translateZ(50px) translateX(3px);
     top: 0;
   }
@@ -108,7 +133,7 @@ Experiments with trapezius
   &Left {
     width: 250px;
     height: 50px;
-    background-color: rgb(104, 167, 104);
+    background-color: #a44446;
     transform: rotateX(90deg) translate3d(3px, 25px, 25px);
   }
 

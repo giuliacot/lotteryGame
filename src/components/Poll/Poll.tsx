@@ -43,7 +43,10 @@ export const Poll = ({ names }: { names: any }) => {
       <h1 className="hGrande">List of partecipants</h1>
       <div>
         <section className={style.slotMachineWrap}>
-          <div className={style.slotMachineDisplay}></div>
+          <div className={style.slotMachineDisplay}>
+            <div className={style.slotMachineLever} />
+          </div>
+          <div className={style.slotMachineScreen} />
           <div className={style.slotMachineKeyboard}>
             <div className={style.slotMachineKeyboardFront}></div>
             <div className={style.slotMachineKeyboardBotton}></div>
