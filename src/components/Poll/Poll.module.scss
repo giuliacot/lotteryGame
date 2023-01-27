@@ -61,13 +61,25 @@ Experiments with trapezius
 //   }
 // }
 
+@keyframes pullTheLever {
+  0% {
+    transform: rotate3d(0.2, 0, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(0.2, 0, 0, 60deg);
+  }
+  100% {
+    transform: rotate3d(0.2, 0, 0, 0deg);
+  }
+}
+
 .slotMachine {
   &Wrap {
     display: block;
     position: relative;
     min-height: 500px;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 6rem auto;
   }
   &Display {
     width: 400px;
@@ -96,13 +108,95 @@ Experiments with trapezius
   width: 20px;
   height: 60px;
   background-color: #d0b802;
-  border-top: 2px solid #bfa902;
-  border-bottom: 2px solid #bfa902;
   position: absolute;
-  right: 0%;
   bottom: 30%;
   left: 100%;
+  border-radius: 0 4px 4px 0;
+
+  &::after {
+    content: ' ';
+    display: block;
+    width: 40px;
+    height: 10px;
+    background-color: #baa501;
+    position: absolute;
+    bottom: 10%;
+    left: 100%;
+    border-radius: 0 4px 4px 0;
+  }
 }
+
+.slotMachineLeverHandle {
+  display: block;
+  // position: relative;
+  // transform-style: preserve-3d;
+}
+
+.slotMachineLeverStick {
+  content: ' ';
+  display: block;
+  width: 15px;
+  height: 150px;
+  background-color: #d0b802;
+  position: absolute;
+  left: 200%;
+  bottom: 0;
+  border-radius: 4px;
+  transform-origin: bottom;
+  // transform: rotate3d(0.2, 0, 0, 0deg);
+  // animation with rotate3D from 0deg and 60deg
+  &::after {
+    content: ' ';
+    display: block;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    background-color: #404040;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(
+      circle at 65% 15%,
+      white 1px,
+      #606060 3%,
+      #303030 60%,
+      #606060 100%
+    );
+  }
+}
+
+.animationLever {
+  animation-duration: 1s;
+  animation-name: pullTheLever;
+}
+
+.slotMachineWinner {
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+}
+// .slotMachineLeverGrip {
+//   border-radius: 100%;
+//   width: 35px;
+//   height: 35px;
+//   background-color: #404040;
+//   left: 150%;
+//   position: absolute;
+//   top: -155%;
+//   position: absolute;
+//   box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.3);
+//   background: radial-gradient(
+//     circle at 65% 15%,
+//     white 1px,
+//     #606060 3%,
+//     #303030 60%,
+//     #606060 100%
+//   );
+// }
 
 .slotMachineKeyboard {
   transform-style: preserve-3d;
