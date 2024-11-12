@@ -5,12 +5,16 @@ import TicketLayout from '../layout/ticket.astro'
 ---
 
 <TicketLayout>
-  <div class="qrcodeContent">
+  <div class="ticket">
     <div class="qrcodeWrapper">
-      <h1 class="hGrande">How to win something 🦑</h1>
-      <p class="pGrande">Scan the QR code and follow the instruction!</p>
+      <div class="qrcodeInfo">
+        <h1 class="hGrande">How to win something</h1>
+        <p class="pGrande">Scan the QR code and follow the instruction!</p>
+      </div>
 
-      <QRCode client:visible />
+      <div class="qrcodeElementContainer">
+        <QRCode client:only />
+      </div>
     </div>
   </div>
 </TicketLayout>

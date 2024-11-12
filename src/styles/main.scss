@@ -3,14 +3,16 @@
 @import './grid';
 
 :root {
-  --tart-orange: #fe4a49ff;
+  --tart-orange: #db3c02;
   --orange-yellow-crayola: #fed766ff;
   --pacific-blue: #009fb7ff;
   --gainsboro: #e6e6eaff;
   --ghost-white: #f4f4f8ff;
+  --almost-black: #212a37ff;
 }
 
-$ticket-hole: 120px;
+$ticket-hole: 80px;
+$ticket-width: 800px;
 
 // Reset
 body {
@@ -95,7 +97,6 @@ input[type='number']::-webkit-outer-spin-button {
 
 input[type='search'] {
   box-sizing: content-box;
-  -webkit-appearance: textfield;
 }
 
 input[type='search']::-webkit-search-cancel-button,
@@ -104,28 +105,31 @@ input[type='search']::-webkit-search-decoration {
 }
 //
 
-.qrcodeContent {
-  display: grid;
-  grid-area: 1 / 1 / 2 / 3;
-}
+
 
 .qrcodeWrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .ticket {
-  padding: $spacingMedio;
-  background-color: $pacific-blue-light;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: 'mainContent sideInfo';
+  max-width: $ticket-width;
+  grid-row: 1;
+  grid-column: 1;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  border-radius: 4px;
   position: relative;
   padding-left: calc($ticket-hole / 2);
   padding-right: calc($ticket-hole / 2);
-  min-height: 500px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 15px 10px $almost-black-shadow;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: rotate(5deg);
+  }
+
 
   &::after {
     position: absolute;
@@ -162,4 +166,23 @@ input[type='search']::-webkit-search-decoration {
   display: flex;
   padding: $spacingMedio;
   align-items: center;
+  justify-content: center;
 }
+
+.qrcodeElementContainer {
+  display: flex;
+  align-items: center;
+  flex: 2 1 auto;
+  padding: $spacingPiccolo;
+
+}
+
+.qrcodeInfo {
+  text-align: center;
+  align-self: center;
+  border-right: 1px dashed $almost-black;
+  padding: $spacingMedio;
+  max-width: calc($ticket-width / 2);
+}
+
+
