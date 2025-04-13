@@ -1,0 +1,11 @@
+---
+title: 'Player page'
+import { Player } from '../components/Player/Player'
+import TicketLayout from '../layout/ticket.astro'
+---
+
+<TicketLayout>
+  <div class="ticketContent">
+    <Player client:load />
+  </div>
+</TicketLayout>

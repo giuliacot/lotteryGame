@@ -1,0 +1,20 @@
+---
+title: 'QRcode page'
+import { QRCode } from '../components/Qrcode/QRcode'
+import TicketLayout from '../layout/ticket.astro'
+---
+
+<TicketLayout>
+  <div class="ticket">
+    <div class="qrcodeWrapper">
+      <div class="qrcodeInfo">
+        <h1 class="hGrande">How to win something</h1>
+        <p class="pGrande">Scan the QR code and follow the instruction!</p>
+      </div>
+
+      <div class="qrcodeElementContainer">
+        <QRCode client:only />
+      </div>
+    </div>
+  </div>
+</TicketLayout>
