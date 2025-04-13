@@ -1,14 +1,15 @@
 @import '../../styles/_grid.scss';
+@import '../../styles/colors.scss';
 
 .input {
-  border-radius: 4px;
-  width: 400px;
+  border-radius: 8px;
   height: 2rem;
-  max-width: 250px;
   margin-bottom: 1rem;
+  border: 1px solid $almost-black;
+  padding: calc($spacingPiccolo / 2) $spacingPiccolo;
 }
 
 .label {
   text-align: left;
-  margin-bottom: $spacingPiccolo;
+  margin-bottom: calc($spacingPiccolo / 2);
 }
