@@ -1,9 +1,13 @@
 /* SCSS HEX */
-$tart-orange: #fe4a49ff;
-$orange-yellow-crayola: #fed766ff;
-$pacific-blue: #009fb7ff;
+$tart-orange:  #C850C0;
+$orange-yellow-crayola: #FFCC70;
+$pacific-blue: #4158D0;
+
 $gainsboro: #e6e6eaff;
 $ghost-white: #f4f4f8ff;
+$almost-black: #212a37ff;
+
+$almost-black-shadow: rgba(33, 42, 55, 0.3);
 
 $lightness-factor: 60%;
 
@@ -27,89 +31,6 @@ $tart-orange-dark: scale-color($tart-orange, $lightness: -$lightness-factor);
 
 $pacific-blue-dark: scale-color($pacific-blue, $lightness: -$lightness-factor);
 
-// /* SCSS HSL */
-// $tart-orange: hsla(0, 99%, 64%, 1);
-// $orange-yellow-crayola: hsla(45, 99%, 70%, 1);
-// $pacific-blue: hsla(188, 100%, 36%, 1);
-// $gainsboro: hsla(240, 9%, 91%, 1);
-// $ghost-white: hsla(240, 22%, 96%, 1);
+$primary-gradient: linear-gradient(43deg, $pacific-blue 0%, $tart-orange 46%, $orange-yellow-crayola 100%);
 
-// /* SCSS RGB */
-// $tart-orange: rgba(254, 74, 73, 1);
-// $orange-yellow-crayola: rgba(254, 215, 102, 1);
-// $pacific-blue: rgba(0, 159, 183, 1);
-// $gainsboro: rgba(230, 230, 234, 1);
-// $ghost-white: rgba(244, 244, 248, 1);
-
-/* SCSS Gradient */
-$gradient-top: linear-gradient(
-  0deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-right: linear-gradient(
-  90deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-bottom: linear-gradient(
-  180deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-left: linear-gradient(
-  270deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-top-right: linear-gradient(
-  45deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-bottom-right: linear-gradient(
-  135deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-top-left: linear-gradient(
-  225deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-bottom-left: linear-gradient(
-  315deg,
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
-$gradient-radial: radial-gradient(
-  #fe4a49ff,
-  #fed766ff,
-  #009fb7ff,
-  #e6e6eaff,
-  #f4f4f8ff
-);
+$primary-light-gradient: linear-gradient(43deg, #C850C0 10%, #FFCC70 68%)

@@ -1,11 +1,11 @@
 ---
-title: "Player page"
-import { Player } from "../components/Player/Player";
-import Main from "../layout/main.astro";
+title: 'Player page'
+import { Player } from '../components/Player/Player'
+import TicketLayout from '../layout/ticket.astro'
 ---
 
-<Main>
-  <div class='ticketContent'>
-    <Player client:load/>
+<TicketLayout>
+  <div class="ticketContent">
+    <Player client:load />
   </div>
-</Main>
+</TicketLayout>

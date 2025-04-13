@@ -1,7 +1,32 @@
-@import '../../styles/grid';
+@import '../../styles/_grid.scss';
+@import '../../styles/colors.scss';
+
+.playerInsertWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  padding: $spacingMedio;
+  border-radius: 8px;
+  background: $primary-gradient;
+
+  & > h1 {
+    place-self: center;
+    margin-bottom: 0;
+  }
+}
 
 .nicknameForm {
   display: flex;
   flex-direction: column;
-  padding: $spacingGrande 0;
+  padding: $spacingMedio 0;
+}
+
+.input {
+  max-width: 100%;
+}
+
+.playerBtn {
+  max-width: fit-content;
+  align-self: center;
+  background-color: $tart-orange;
 }

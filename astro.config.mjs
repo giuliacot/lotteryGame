@@ -3,8 +3,15 @@ import react from '@astrojs/react'
 import netlify from '@astrojs/netlify/functions'
 
 export default defineConfig({
+  integrations: [react()],
   output: 'server',
   adapter: netlify(),
-  integrations: [react()],
-  site: 'https://giuliacot.github.io/lotteryGame',
+  ssr: {
+    target: 'node',
+  },
+  server: {
+    hrm: {
+      port: 3001,
+    },
+  },
 })

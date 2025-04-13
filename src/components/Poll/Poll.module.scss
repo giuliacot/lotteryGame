@@ -1,0 +1,279 @@
+// check how to create a cube with transform preserve3d
+/**
+Experiments with trapezius
+**/
+// .slotMachine {
+//   $widthDisplay: 488;
+//   $heightDisplay: 300;
+//   &Wrapper {
+//     outline: 1px dashed blueviolet;
+//     margin: 0 auto;
+//     // transform-style: preserve-3d;
+//     // transform: rotate3d(1, 0, 0, 40deg);
+//   }
+
+//   &Display {
+//     width: calc($widthDisplay * 1px);
+//     height: calc($heightDisplay * 1px);
+//     background-color: palegreen;
+//     margin: 0 auto;
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   &Screen {
+//     width: calc($widthDisplay * 0.7px);
+//     height: calc($heightDisplay * 0.5px);
+//     background: whitesmoke;
+//     margin: 0 auto;
+//   }
+
+//   &Keyboard {
+//     display: flex;
+//     flex-direction: row;
+//     // use background hack to make a trapezoid
+//     &__left {
+//       height: 150px;
+//       width: calc($heightDisplay * 1.2px);
+//       background-image: linear-gradient(
+//         51deg,
+//         dodgerblue 280px,
+//         transparent 280px
+//       );
+
+//       transform: rotateY(180deg);
+//     }
+
+//     &__right {
+//       height: 150px;
+//       width: calc($heightDisplay * 1.2px);
+//       background-image: linear-gradient(
+//         51deg,
+//         dodgerblue 280px,
+//         transparent 280px
+//       );
+//     }
+//   }
+
+//   &Border {
+//     height: calc($heightDisplay / 6 * 1px);
+//     background: palevioletred;
+//   }
+// }
+
+@keyframes pullTheLever {
+  0% {
+    transform: rotate3d(0.2, 0, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(0.2, 0, 0, 60deg);
+  }
+  100% {
+    transform: rotate3d(0.2, 0, 0, 0deg);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slotMachine {
+  &Wrap {
+    display: block;
+    position: relative;
+    min-height: 500px;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  &Display {
+    width: 400px;
+    height: 300px;
+    background-color: #abb1b6;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    border-radius: 8px;
+  }
+  &Screen {
+    width: 350px;
+    height: 150px;
+    background-color: white;
+    border: 10px solid #57636d;
+    transform: translate(-50%, -60%);
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    border-radius: 8px;
+  }
+}
+
+.slotMachineLever {
+  width: 20px;
+  height: 60px;
+  background-color: #d0b802;
+  position: absolute;
+  bottom: 30%;
+  left: 100%;
+  border-radius: 0 4px 4px 0;
+
+  &::after {
+    content: ' ';
+    display: block;
+    width: 40px;
+    height: 10px;
+    background-color: #baa501;
+    position: absolute;
+    bottom: 10%;
+    left: 100%;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+.slotMachineLeverHandle {
+  display: block;
+  // position: relative;
+  // transform-style: preserve-3d;
+}
+
+.slotMachineLeverStick {
+  content: ' ';
+  display: block;
+  width: 15px;
+  height: 150px;
+  background-color: #d0b802;
+  position: absolute;
+  left: 200%;
+  bottom: 0;
+  border-radius: 4px;
+  transform-origin: bottom;
+  // transform: rotate3d(0.2, 0, 0, 0deg);
+  // animation with rotate3D from 0deg and 60deg
+  &::after {
+    content: ' ';
+    display: block;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    background-color: #404040;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(
+      circle at 65% 15%,
+      white 1px,
+      #606060 3%,
+      #303030 60%,
+      #606060 100%
+    );
+  }
+}
+
+.animationLever {
+  animation-duration: 1s;
+  animation-name: pullTheLever;
+}
+
+.slotMachineWinner {
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+}
+
+.slotMachineWinnerName {
+  display: inline-block;
+  animation: winnerScale 1s ease-in-out forwards;
+  opacity: 1;
+
+  @keyframes winnerScale {
+    0% {
+      transform: scale(2);
+    }
+    50% {
+      transform: scale(5);
+    }
+    100% {
+      transform: scale(2);
+    }
+  }
+}
+
+.hideWinnerName {
+  opacity: 0;
+}
+
+
+// .slotMachineLeverGrip {
+//   border-radius: 100%;
+//   width: 35px;
+//   height: 35px;
+//   background-color: #404040;
+//   left: 150%;
+//   position: absolute;
+//   top: -155%;
+//   position: absolute;
+//   box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.3);
+//   background: radial-gradient(
+//     circle at 65% 15%,
+//     white 1px,
+//     #606060 3%,
+//     #303030 60%,
+//     #606060 100%
+//   );
+// }
+
+.slotMachineKeyboard {
+  transform-style: preserve-3d;
+  transform: translate(-50%, -30%) perspective(400px)
+    rotate3d(0, 1, 0.75, 180deg) scale(2.5);
+  position: absolute;
+  width: 250px;
+  top: 50%;
+  left: 50%;
+
+  &Front {
+    width: 250px;
+    height: 100px;
+    background-color: #57636d;
+    transform: translateZ(0px) translateX(3px);
+    position: absolute;
+    top: 0;
+  }
+
+  &Button {
+    width: 250px;
+    height: 100px;
+    background-color: #57636d;
+    transform: translateZ(50px) translateX(3px);
+    top: 0;
+  }
+
+  &Left {
+    width: 250px;
+    height: 50px;
+    background-color: #2e3d49;
+    transform: rotateX(90deg) translate3d(3px, 25px, 25px);
+  }
+
+  &Right {
+    width: 250px;
+    height: 50px;
+    background-color: orange;
+    transform: rotateX(90deg) translate3d(3px, 25px, 175px);
+  }
+}
+
+.drawTheWinner {
+  animation-duration: 1s;
+  animation-name: pullTheLever;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  position: absolute;
+  bottom: 20%;
+}

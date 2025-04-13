@@ -1,3 +1,4 @@
+// TODO renaming with something more readible
 export const initReducer = {
   error: false,
   done: false,

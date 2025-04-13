@@ -5,7 +5,8 @@ $spacingMedio: 2rem;
 $spacingPiccolo: 0.5rem;
 
 .container {
-  display: block;
-  max-width: $max-width;
-  margin: $spacingGrande auto;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  height: 100vh;
 }
