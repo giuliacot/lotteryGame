@@ -73,18 +73,24 @@ Experiments with trapezius
   }
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .slotMachine {
   &Wrap {
     display: block;
     position: relative;
     min-height: 500px;
     max-width: 1000px;
-    margin: 6rem auto;
+    margin: 2rem auto;
   }
   &Display {
     width: 400px;
     height: 300px;
-    background-color: #ffa69e;
+    background-color: #abb1b6;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 30%;
@@ -95,7 +101,7 @@ Experiments with trapezius
     width: 350px;
     height: 150px;
     background-color: white;
-    border: 10px solid #f7585b;
+    border: 10px solid #57636d;
     transform: translate(-50%, -60%);
     left: 50%;
     top: 30%;
@@ -179,6 +185,30 @@ Experiments with trapezius
   align-items: center;
   min-height: 100%;
 }
+
+.slotMachineWinnerName {
+  display: inline-block;
+  animation: winnerScale 1s ease-in-out forwards;
+  opacity: 1;
+
+  @keyframes winnerScale {
+    0% {
+      transform: scale(2);
+    }
+    50% {
+      transform: scale(5);
+    }
+    100% {
+      transform: scale(2);
+    }
+  }
+}
+
+.hideWinnerName {
+  opacity: 0;
+}
+
+
 // .slotMachineLeverGrip {
 //   border-radius: 100%;
 //   width: 35px;
@@ -210,16 +240,16 @@ Experiments with trapezius
   &Front {
     width: 250px;
     height: 100px;
-    background-color: #ff686b;
+    background-color: #57636d;
     transform: translateZ(0px) translateX(3px);
     position: absolute;
     top: 0;
   }
 
-  &Botton {
+  &Button {
     width: 250px;
     height: 100px;
-    background-color: #ff686b;
+    background-color: #57636d;
     transform: translateZ(50px) translateX(3px);
     top: 0;
   }
@@ -227,7 +257,7 @@ Experiments with trapezius
   &Left {
     width: 250px;
     height: 50px;
-    background-color: #a44446;
+    background-color: #2e3d49;
     transform: rotateX(90deg) translate3d(3px, 25px, 25px);
   }
 
@@ -237,4 +267,13 @@ Experiments with trapezius
     background-color: orange;
     transform: rotateX(90deg) translate3d(3px, 25px, 175px);
   }
+}
+
+.drawTheWinner {
+  animation-duration: 1s;
+  animation-name: pullTheLever;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  position: absolute;
+  bottom: 20%;
 }
