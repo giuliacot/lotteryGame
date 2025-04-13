@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import netlify from '@astrojs/netlify/functions'
+import netlify from '@astrojs/netlify'
 
 export default defineConfig({
   integrations: [react()],
@@ -12,6 +12,13 @@ export default defineConfig({
   server: {
     hrm: {
       port: 3001,
+    },
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ['@astrojs/netlify/netlify-functions.js'],
+      },
     },
   },
 })
