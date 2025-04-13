@@ -11,10 +11,16 @@ export const Button = ({
   type,
   form,
   children,
+  className,
   ...props
 }: ButtonSpecificProps) => {
   return (
-    <button className={style.button} type={type} form={form} {...props}>
+    <button
+      className={`${style.button} ${className ?? ''}`}
+      type={type}
+      form={form}
+      {...props}
+    >
       {children}
     </button>
   )
