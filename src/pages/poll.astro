@@ -14,7 +14,7 @@ const response = await fetch(
   }
 )
 const { records } = await response.json()
-const listOfPartecipants = records.map(
+const listOfPartecipants = records?.map(
   (partecipant: {
     id: string
     createdTime: string
