@@ -3,13 +3,14 @@
 @import './grid';
 
 :root {
-  --tart-orange: #db3c02;
-  --orange-yellow-crayola: #fed766ff;
-  --pacific-blue: #009fb7ff;
+  --tart-orange: #C850C0;
+  --orange-yellow-crayola: #FFCC70;
+  --pacific-blue: #4158D0;
   --gainsboro: #e6e6eaff;
   --ghost-white: #f4f4f8ff;
   --almost-black: #212a37ff;
 }
+
 
 $ticket-hole: 80px;
 $ticket-width: 800px;
@@ -105,8 +106,6 @@ input[type='search']::-webkit-search-decoration {
 }
 //
 
-
-
 .qrcodeWrapper {
   display: flex;
 }
@@ -115,8 +114,8 @@ input[type='search']::-webkit-search-decoration {
   max-width: $ticket-width;
   grid-row: 1;
   grid-column: 1;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-color: $pacific-blue;
+  background-image: $primary-gradient;
   border-radius: 4px;
   position: relative;
   padding-left: calc($ticket-hole / 2);
